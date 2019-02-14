@@ -1,10 +1,15 @@
 from . import db
+from flask_login import UserMixin
 from werkzeug.security import generate_password_hash,check_password_hash
+from . import login_manager
+
 
 migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
-
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -39,3 +44,14 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'User {self.name}'
+
+class User(UserMixin,db.Model):
+    __tablename__ = 'users'
+
+   id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(255),index = True)
+    email = db.Column(db.String(255),unique = True,index = True)
+    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
+    password_secure = db.Column(db.String(255))
