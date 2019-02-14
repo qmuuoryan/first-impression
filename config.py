@@ -13,3 +13,16 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ryan:ryanmuuo91@localhost/impressions_test'
+
+class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ryan:ryanmuuo91@localhost/first_impessions'
+    DEBUG = True
+
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig,
+'test':TestConfig
