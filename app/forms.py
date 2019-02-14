@@ -18,4 +18,11 @@ class CommentForm(FlaskForm):
 
 class SubscribeForm(FlaskForm):
     email = StringField("Enter Your Email Address :")
-    submit= SubmitField('Subscribe')
+    submit= SubmitField('Subscribe')from flask_wtf import FlaskForm
+from wtforms import StringField,PasswordField,SubmitField
+from wtforms.validators import Required,Email,EqualTo
+from ..models import User
+from flask_wtf import FlaskForm
+from wtforms import StringField,PasswordField,SubmitField
+from wtforms.validators import Required,Email,EqualTo
+from ..models import User
