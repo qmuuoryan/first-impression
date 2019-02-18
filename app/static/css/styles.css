@@ -8,16 +8,16 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: steelblue;
+    background-color: rgb(10, 63, 107);
     text-align: center;
     color: white;
-    transition: background 1s, transform 0.5s;
+    transition: background 1s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .navbar {
-    background-color: steelblue;
+    background-color: rgb(15, 64, 104);
     border: none;
 }
 .navbar a {
