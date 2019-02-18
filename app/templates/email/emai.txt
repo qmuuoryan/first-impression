@@ -1,0 +1,6 @@
+Hey {{name}}
+Welcome to Perfect Pitch.
+This is a platform made for you to share your pitches and views.
+Hope you enjoy your experience with us.
+
+Enjoy!!,
