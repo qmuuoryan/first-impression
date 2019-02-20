@@ -1,32 +1,34 @@
 {% extends "base.html" %}
-
+{% import "bootstrap/wtf.html" as wtf%}
 {% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
-{% endblock%}
+    {{super()}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+{% endblock %}
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         {% for message in get_flashed_messages() %}
         <div class="alert alert-info">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ message }}
         </div>
         {% endfor %}
-    <h1>Welcome to  PERFECT PITCH</h1>
+    <h1><strong>Welcome to  PERFECT PITCH</strong></h1>
         <h1 class="text-center">Categories</h1>
         <div class="row categories">
             <div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-<a href="{{url_for('main.categories',category='pick-up-lines')}}">Pick Up Lines</a>
-            </div>
+<a class="btn btn-info btn-lg"  href="{{url_for('main.categories',category='pick-up-lines')}}">Pick Up Lines</a>
+            </div><br>
             <div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-<a href="{{url_for('main.categories',category='funny-pitches')}}">Funny</a>
+<a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='funny-pitches')}}">Funny</a>
             </div>
         </div>
-            #<div class="category  col-sm-12 col-md-3 col-lg-3">
-<a href="{{url_for('main.categories',category='random-pitch')}}">Random</a>
-            </div>
+            <div class="category  col-sm-12 col-md-3 col-lg-3">
+<a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='random-pitch')}}">Random</a>
+            </div><br>
 <div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <a href="{{url_for('main.categories',category='all')}}">All</a>
+    <a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='all')}}">All</a>
 </div>
         </div>
     </div>

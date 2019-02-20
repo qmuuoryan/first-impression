@@ -1,0 +1,16 @@
+body {
+    background-size: cover;
+    font-family: Text Me One;
+    font-size: 1.8em;
+}
+.navbar {
+    background-color: rgb(21, 22, 24);
+    border: none;
+}
+login-btn {
+    color: steelblue;
+}
+.navbar {
+    background-color: steelblue;
+    border: none;
+}
