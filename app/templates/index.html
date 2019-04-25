@@ -2,9 +2,10 @@
 {% import "bootstrap/wtf.html" as wtf%}
 {% block styles%}
     {{super()}}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
 {% endblock %}
 {% block content %}
     <div class="container-fluid">
@@ -14,22 +15,29 @@
             {{ message }}
         </div>
         {% endfor %}
-    <h1><strong>Welcome to  PERFECT PITCH</strong></h1>
-        <h1 class="text-center">Categories</h1>
-        <div class="row categories">
-            <div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-<a class="btn btn-info btn-lg"  href="{{url_for('main.categories',category='pick-up-lines')}}">Pick Up Lines</a>
-            </div><br>
-            <div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-<a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='funny-pitches')}}">Funny</a>
+    <h1><strong>Welcome to PITCH APP</strong></h1>
+    
+    <div class="jumbotron"> 
+        <h2 class="text-center">Categories</h2>
+    </div>
+    <div class="row categories">
+        
+            
+                <div class="category col-md-3 ">
+<a  href="{{url_for('main.categories',category='pick-up-lines')}}">Pick Up Lines</a>
             </div>
-        </div>
-            <div class="category  col-sm-12 col-md-3 col-lg-3">
-<a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='random-pitch')}}">Random</a>
-            </div><br>
-<div class="category col-xs-12 col-sm-12 col-md-3 col-lg-3">
-    <a class="btn btn-info btn-lg" href="{{url_for('main.categories',category='all')}}">All</a>
+        
+            <div class="category col-md-3 ">
+<a  href="{{url_for('main.categories',category='funny-pitches')}}">Funny</a>
+            </div>
+        
+            <div class="category col-md-3">
+<a  href="{{url_for('main.categories',category='random-pitch')}}">Random</a>
+            </div>
+<div class="category col-md-3 ">
+    <a href="{{url_for('main.categories',category='all')}}">All</a>
 </div>
         </div>
     </div>
+
 {% endblock %}
